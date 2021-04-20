@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Editar
+{% endblock %}
+
+{% block main %}
+
+    <form action="/editar/{{rows[0]["id"]}}/edit" method="post">
+        <body>
+                <div class="form-group">
+                    <input list="comida" class="form-control" name="name" value="{{rows[0]['name']}}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" autocomplete=off name="ingredients" placeholder="Ingedientes" type="text" placeholder="Comida" value="{{rows[0]["ingredients"]}}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" autocomplete=off name="howto" placeholder="Pasos a seguir" type="text" value="{{rows[0]["howto"]}}">
+                </div>
+                <button class="btn btn-primary" type="submit">Editar receta</button>
+        </body>
+    </form>
+
+{% endblock %}

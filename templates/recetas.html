@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recetas
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ingredientes</th>
+            <th scope="col">Pasos a seguir</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td name="name">{{row["name"]}}</td>
+                    <td>{{row["ingredients"]}}</td>
+                    <td>{{row["howto"]}}</td>
+                    <td><a href="editar/{{row["id"]}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="delete/{{row["id"]}}" class="btn btn-danger">Eliminar</a></td>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
